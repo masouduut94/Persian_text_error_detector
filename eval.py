@@ -80,7 +80,8 @@ else:
         y_test = [2, 1]
 
 # Map data into vocabulary
-vocab_path = os.path.join(FLAGS.checkpoint_dir, "..", "vocab")
+model_dir = open('model_dir.txt').readline()
+vocab_path = model_dir + "/vocab"
 vocab_processor = learn.preprocessing.VocabularyProcessor.restore(vocab_path)
 x_test = np.array(list(vocab_processor.transform(x_raw)))
 
